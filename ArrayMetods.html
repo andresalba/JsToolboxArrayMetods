@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+    <body>
+
+        <h1>JavaScript Array Methods</h1>
+
+        <h2>toString()</h2>
+        <p id="demo1"></p>
+        <p id="demo2"></p>
+
+        <h2>filter()</h2>
+        <p id="demo3"></p>
+        <p id="demo4"></p>
+
+        <h2>map()</h2>
+        <p id="demo5"></p>
+        <p id="demo6"></p>
+
+        <h2>find()</h2>
+        <p id="demo7"></p>
+        <p id="demo8"></p>
+
+        <h2>push()</h2>
+        <p id="demo9"></p>
+        <p id="demo10"></p>
+    
+        <h2>reduce()</h2>
+        <p id="demo11"></p>
+        <p id="demo12"></p>
+
+        <h2>slice()</h2>
+        <p id="demo13"></p>
+        <p id="demo14"></p>
+    
+        <h2>splice()</h2>
+        <p id="demo15"></p>
+        <p id="demo16"></p>
+
+        <h2>sort()</h2>
+        <p id="demo17"></p>
+        <p id="demo18"></p>
+
+        <h2>pop()</h2>
+        <p id="demo19"></p>
+        <p id="demo20"></p>
+
+        <h2>shift()</h2>
+        <p id="demo21"></p>
+        <p id="demo22"></p>
+
+        <h2>unshift()</h2>
+        <p id="demo23"></p>
+        <p id="demo24"></p>
+
+        <h2>spread operator</h2>
+        <p id="demo25"></p>
+        <p id="demo26"></p>
+
+        <h2>concat()</h2>
+        <p id="demo27"></p>
+        <p id="demo28"></p>
+        <p id="demo29"></p>
+
+        <h2>join()</h2>
+        <p id="demo30"></p>
+        <p id="demo31"></p>
+
+        <h2>includes()</h2>
+        <p id="demo32"></p>
+        <p id="demo33"></p>
+
+        <h2>indexOf()</h2>
+        <p id="demo34"></p>
+        <p id="demo35"></p>
+
+        <h2>every()</h2>
+        <p id="demo36"></p>
+        <p id="demo37"></p>
+
+        <h2>reverse()</h2>
+        <p id="demo38"></p>
+        <p id="demo39"></p>
+
+        <h2>some()</h2>
+        <p id="demo40"></p>
+        <p id="demo41"></p>
+
+        <script>
+
+            //to string method
+            const fruits1 = ["Banana", "Orange", "Apple", "Mango"];
+            document.getElementById("demo1").innerHTML = fruits1;
+            document.getElementById("demo2").innerHTML = fruits1.toString();
+
+            //filter method returns an array of elements that pass the test implemented by the provided function IMPORTANT
+            const ages = [32, 33, 16, 40];
+            const checkAge = ages.filter(age => age < 33);
+            document.getElementById("demo3").innerHTML = ages;
+            document.getElementById("demo4").innerHTML = checkAge.toString();
+
+            //map array of objects < 30
+            const students = [
+                { name: "John", age: 15 },
+                { name: "Mike", age: 25 },
+                { name: "Nancy", age: 40 }
+            ];
+            const checkAge1 = students.map(student => {
+                if (student.age < 30) {
+                    return student.name;
+                }
+            });
+            //map array students.name IMPORTANT
+            const checkAge2 = students.map(student => student.name);
+            document.getElementById("demo5").innerHTML = checkAge2;
+            document.getElementById("demo6").innerHTML = checkAge1.toString();
+
+            //find edades > 15 IMPORTANT
+            const edades = [3, 10, 18, 20];
+            const checkEdad = edades.find(edad => edad > 15);
+            document.getElementById("demo7").innerHTML = edades;
+            document.getElementById("demo8").innerHTML = checkEdad;
+
+            //push method adds one or more elements to the end of an array and returns the new length of the array IMPORTANT
+            const fruits2 = ["Banana", "Orange", "Apple", "Mango"];
+            document.getElementById("demo9").innerHTML = fruits2;
+            fruits2.push("Kiwi");
+            document.getElementById("demo10").innerHTML = fruits2.toString();
+
+            //reduce method reduces the array to a single value IMPORTANT
+            const nums = [1, 2, 3, 4, 5];
+            const sum = nums.reduce((a, b) => a + b);
+            document.getElementById("demo11").innerHTML = nums;
+            document.getElementById("demo12").innerHTML = sum;
+
+            //slice method returns selected elements in an array, as a new array IMPORTANT
+            const fruits3 = ["Banana", "Orange", "Apple", "Mango"];
+            document.getElementById("demo13").innerHTML = fruits3;
+            document.getElementById("demo14").innerHTML = fruits3.slice(1, 3).toString();
+            
+            //splice method adds and/or removes array elements IMPORTANT
+            const fruits4 = ["Banana", "Orange", "Apple", "Mango"];
+            document.getElementById("demo15").innerHTML = fruits4;
+            fruits4.splice(2, 0, "Lemon", "Kiwi");
+            document.getElementById("demo16").innerHTML = fruits4.toString();
+
+            //sort method sorts the elements of an array in place and returns the sorted array.
+            const fruits5 = ["Banana", "Orange", "Apple", "Mango"];
+            document.getElementById("demo17").innerHTML = fruits5;
+            fruits5.sort();
+            document.getElementById("demo18").innerHTML = fruits5.toString();
+
+            //pop method removes the last element from an array and returns that element.
+            const fruits6 = ["Banana", "Orange", "Apple", "Mango"];
+            document.getElementById("demo19").innerHTML = fruits6;
+            fruits6.pop();
+            document.getElementById("demo20").innerHTML = fruits6.toString();
+
+            //shift method removes the first element of an array and returns that element.
+            const fruits7 = ["Banana", "Orange", "Apple", "Mango"];
+            document.getElementById("demo21").innerHTML = fruits7;
+            fruits7.shift();
+            document.getElementById("demo22").innerHTML = fruits7.toString();
+
+            //unshift method adds one or more elements to the beginning of an array and returns the new length of the array.
+            const fruits8 = ["Banana", "Orange", "Apple", "Mango"];
+            document.getElementById("demo23").innerHTML = fruits8;
+            fruits8.unshift("Lemon", "Kiwi");
+            document.getElementById("demo24").innerHTML = fruits8.toString();
+
+            //spread operator
+            const fruits9 = ["Banana", "Orange", "Apple", "Mango"];
+            document.getElementById("demo25").innerHTML = fruits9;
+            const fruits10 = [...fruits9, "Lemon", "Kiwi"];
+            document.getElementById("demo26").innerHTML = fruits10;
+
+            //concat method joins two or more arrays, and returns the result as a new array.
+            const fruits11 = ["Banana", "Orange", "Apple", "Mango"];
+            document.getElementById("demo27").innerHTML = fruits11;
+            const fruits12 = ["Lemon", "Kiwi"];
+            document.getElementById("demo28").innerHTML = fruits12;
+            const fruits13 = fruits11.concat(fruits12);
+            document.getElementById("demo29").innerHTML = fruits13;
+
+            //join method joins all elements of an array into a string IMPORTANT
+            const fruits14 = ["Banana", "Orange", "Apple", "Mango"];
+            document.getElementById("demo30").innerHTML = fruits14;
+            const fruits15 = fruits14.join(" * ");
+            document.getElementById("demo31").innerHTML = fruits15;
+
+            //includes method returns true if the given element is in the array, and false otherwise IMPORTANT
+            const fruits16 = ["Banana", "Orange", "Apple", "Mango"];
+            document.getElementById("demo32").innerHTML = fruits16;
+            const fruits17 = fruits16.includes("Banana");
+            document.getElementById("demo33").innerHTML = fruits17;
+
+            //indexOf method returns the first index at which a given element can be found in the array, or -1 if it is not present.
+            const fruits18 = ["Banana", "Orange", "Apple", "Mango"];
+            document.getElementById("demo34").innerHTML = fruits18;
+            const fruits19 = fruits18.indexOf("Banana");
+            document.getElementById("demo35").innerHTML = fruits19;
+
+            //Every method returns true if all elements in the array pass the test implemented by the provided function.
+            const fruits20 = ["Banana", "Orange", "Apple", "Mango"];
+            document.getElementById("demo36").innerHTML = fruits20;
+            const fruits21 = fruits20.every(fruit => fruit.length > 1);
+            document.getElementById("demo37").innerHTML = fruits21;
+
+            //reverse method reverses the elements of an array in place.
+            const fruits22 = ["Banana", "Orange", "Apple", "Mango"];
+            document.getElementById("demo38").innerHTML = fruits22;
+            fruits22.reverse();
+            document.getElementById("demo39").innerHTML = fruits22.toString();
+
+            //some method returns true if at least one element in the array passes the test implemented by the provided function.
+            const fruits23 = ["Banana", "Orange", "Apple", "Mango"];
+            document.getElementById("demo40").innerHTML = fruits23;
+            const fruits24 = fruits23.some(fruit => fruit.length > 5);
+            document.getElementById("demo41").innerHTML = fruits24;
+
+        </script>
+
+    </body>
+</html>
